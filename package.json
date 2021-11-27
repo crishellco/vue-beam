@@ -1,0 +1,74 @@
+{
+  "name": "@crishellco/vue-beam",
+  "version": "0.0.0-semantically-released",
+  "author": "Chris Mitchell (@crishellco)",
+  "description": "A global event bus for Vue",
+  "main": "dist/vue-beam.umd.js",
+  "files": [
+    "dist/",
+    "nuxt/"
+  ],
+  "scripts": {
+    "build": "vue-cli-service build --target lib --dest ./dist ./src/package/index.js",
+    "test": "npm-run-all --print-label --parallel lint:* --parallel test:*",
+    "test:unit": "vue-cli-service test:unit",
+    "lint:js": "vue-cli-service lint src",
+    "lint:js:fix": "yarn lint:js --fix",
+    "release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crishellco/vue-beam.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crishellco/vue-beam/issues"
+  },
+  "homepage": "https://crishellco.github.io/vue-beam/",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "mitt": "^3.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@form8ion/commitlint-config": "^1.0.19",
+    "@popperjs/core": "^2.9.1",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/test-utils": "^1.3.0",
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-jest": "^24.3.2",
+    "eslint-plugin-jest-formatting": "^2.0.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^7.0.0",
+    "js-beautify": "^1.13.5",
+    "lint-staged": "^9.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "semantic-release": "^17.4.4",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "pre-push": "yarn test:unit --coverage=false"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
