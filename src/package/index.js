@@ -1,11 +1,9 @@
-import { MITT } from './constants';
+import { DEFAULT_OPTIONS } from './constants';
 import { mixinFactory } from './mixin';
-
-export const defaultOptions = { adapter: MITT };
 
 export default function install(Vue, options = {}) {
   const mergedOptions = Vue.observable({
-    ...defaultOptions,
+    ...DEFAULT_OPTIONS,
     ...options,
   });
 
