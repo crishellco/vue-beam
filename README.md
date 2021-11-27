@@ -53,10 +53,10 @@ Installs all components globally.
 
 #### Options
 
-| Name      | Description                                         | Default     |
-|-----------|-----------------------------------------------------|-------------|
-| `adapter` | The emitter library to use (`mitt`, `tiny-emitter`) | `mitt`      |
-| `prefix`  | The prefix added to all event names                 | `undefined` |
+| Name      | Description                                                                                 | Default     |
+|-----------|---------------------------------------------------------------------------------------------|-------------|
+| `adapter` | The emitter library to use (`mitt`, `tiny-emitter`)                                         | `mitt`      |
+| `prefix`  | The prefix added to all event names (if provided, concatenates with a colon `prefix:event`) | `undefined` |
 
 ## API `$vm.$beam`
 
