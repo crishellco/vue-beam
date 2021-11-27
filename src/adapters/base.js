@@ -19,5 +19,9 @@ export default function({ instance, resolveType }) {
     once(type, handler) {
       instance.once(resolveType(type), handler);
     },
+
+    debouncedEmit(...args) {
+      return instance.debouncedEmit(...args);
+    },
   };
 }

@@ -53,12 +53,11 @@ Installs all components globally.
 
 #### Options
 
-| Name      | Description                                                                                 | Default     |
-|-----------|---------------------------------------------------------------------------------------------|-------------|
-| `adapter` | The emitter library to use (`mitt`, `tiny-emitter`)                                         | `mitt`      |
-| `prefix`  | The prefix added to all event names (if provided, concatenates with a colon `prefix:event`) | `undefined` |
+| Name     | Description                                                                                 | Default     |
+|----------|---------------------------------------------------------------------------------------------|-------------|
+| `prefix` | The prefix added to all event names (if provided, concatenates with a colon `prefix:event`) | `undefined` |
 
-## API `$vm.$beam`
+## API
 
 ### Methods
 
@@ -66,25 +65,31 @@ Installs all components globally.
 
 Emits an event.
 
-`$vm.$beam.emit(event: string, payload?: {})`
+`$vm.$beam.emit(type: string, payload?: {})`
+
+#### $vm.$beam.debouncedEmit
+
+Returns a debounced emit function. Useful when it is undesirable to emit the same event many times in a short period of time.
+
+`$vm.$beam.debouncedEmit(delay: number, type: string): (payload) => {}`
 
 #### $vm.$beam.on
 
 Subscribes to an event.
 
-`$vm.$beam.on(event: string, handler: function)`
+`$vm.$beam.on(type: string, handler: function)`
 
 #### $vm.$beam.once
 
 Subscribes to an event once.
 
-`$vm.$beam.once(event: string, handler: function)`
+`$vm.$beam.once(type: string, handler: function)`
 
 #### $vm.$beam.off
 
 Unsubscribes to an event.
 
-`$vm.$beam.off(event: string, handler: function)`
+`$vm.$beam.off(type: string, handler: function)`
 
 ## Development
 

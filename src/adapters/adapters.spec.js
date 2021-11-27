@@ -1,7 +1,9 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
-import { MITT, TINY_EMITTER } from '../constants';
+import { BEAMITTER } from '../constants';
 
 import VueBeam from '../index';
+
+jest.useFakeTimers();
 
 const getWrapper = () => {
   return shallowMount({ template: `<div><span></span></div>` }, { localVue });
@@ -22,7 +24,7 @@ function init(adapter) {
 }
 
 describe('adapters', () => {
-  [MITT, TINY_EMITTER, 'not valid'].forEach(adapter => {
+  [BEAMITTER, 'not valid'].forEach(adapter => {
     it('should emit many times', () => {
       init(adapter);
       const handler = jest.fn();
@@ -77,6 +79,22 @@ describe('adapters', () => {
       $beam.emit(event, payload);
       expect(handler1).toBeCalledTimes(1);
       expect(handler2).toBeCalledTimes(3);
+    });
+
+    it('should debounce emit', () => {
+      const handler1 = jest.fn();
+      const delay = 500;
+      const debounced = $beam.debouncedEmit(delay, event);
+
+      $beam.on(event, handler1);
+
+      for (let i = 0; i < 100; i++) {
+        debounced(payload);
+      }
+
+      jest.runAllTimers();
+
+      expect(handler1).toBeCalledTimes(1);
     });
   });
 });

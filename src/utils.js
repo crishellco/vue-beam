@@ -31,6 +31,17 @@ export const pushEmitted = (state, type, payload) => {
   Vue.set(state.emitted, type, get(state.emitted, type, []).concat(payload));
 };
 
-export const pushHandled = (state, type, args) => {
-  Vue.set(state.handled, type, get(state.handled, type, []).concat(args));
+export const pushHandled = (state, type, payload) => {
+  Vue.set(state.handled, type, get(state.handled, type, []).concat(payload));
+};
+
+export const debounce = (callback, wait) => {
+  let timeoutId = null;
+
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      callback.apply(null, args);
+    }, wait);
+  };
 };

@@ -19,6 +19,6 @@ describe('mixin', () => {
   });
 
   it('add $beam to every components', () => {
-    expect(Object.keys($beam)).toEqual(['emit', 'on', 'off', 'once', 'emitted', 'handled', 'options']);
+    expect(Object.keys($beam)).toEqual(['emit', 'on', 'off', 'once', 'debouncedEmit', 'emitted', 'handled', 'options']);
   });
 });

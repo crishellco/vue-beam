@@ -1,4 +1,6 @@
-import { get, pushEmitted, pushHandled, typeResolverFactory, uuid, WILDCARD } from './utils';
+import { debounce, get, pushEmitted, pushHandled, typeResolverFactory, uuid, WILDCARD } from './utils';
+
+jest.useFakeTimers();
 
 const payload = { foo: 'bar' };
 let state;
@@ -53,6 +55,22 @@ describe('utils', () => {
       pushHandled(state, 'event2', payload);
       pushHandled(state, 'event2', payload);
       expect(state.handled).toEqual({ event1: [payload], event2: [payload, payload] });
+    });
+  });
+
+  describe('debounce', () => {
+    it('should debounce', () => {
+      const delay = 500;
+      const cb = jest.fn();
+      const fn = debounce(cb, delay);
+
+      for (let i = 0; i < 100; i++) {
+        fn();
+      }
+
+      jest.runAllTimers();
+
+      expect(cb).toBeCalledTimes(1);
     });
   });
 });

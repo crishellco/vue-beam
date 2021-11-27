@@ -3,7 +3,7 @@
   "version": "0.0.0-semantically-released",
   "author": "Chris Mitchell (@crishellco)",
   "description": "A global event bus for Vue",
-  "source": "src/package/index.js",
+  "source": "src/index.js",
   "exports": {
     "require": "./dist/vue-beam.cjs",
     "default": "./dist/vue-beam.modern.js"
@@ -35,10 +35,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "mitt": "^3.0.0",
-    "tiny-emitter": "^2.1.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "vue": "^2.6.11"
   },
