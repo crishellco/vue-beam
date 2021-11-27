@@ -1,4 +1,4 @@
-# Vue Spruce
+# Vue Beam
 
 ![Build](https://github.com/crishellco/vue-beam/workflows/Build/badge.svg)
 [![codecov](https://codecov.io/gh/crishellco/vue-beam/branch/master/graph/badge.svg?token=M7N86U5GF7)](https://codecov.io/gh/crishellco/vue-beam)
