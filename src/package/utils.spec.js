@@ -1,6 +1,13 @@
 import { get, pushEmitted, pushHandled, typeResolverFactory, uuid, WILDCARD } from './utils';
 
+const payload = { foo: 'bar' };
+let state;
+
 describe('utils', () => {
+  beforeEach(() => {
+    state = { emitted: {}, handled: {} };
+  });
+
   describe('uuid', () => {
     it('should generate unique ids', () => {
       const uuids = Array(1000)
@@ -33,9 +40,6 @@ describe('utils', () => {
 
   describe('pushEmitted', () => {
     it('should push emitted events to cache', () => {
-      const state = { emitted: {} };
-      const payload = { foo: 'bar' };
-
       pushEmitted(state, 'event1', payload);
       pushEmitted(state, 'event2', payload);
       pushEmitted(state, 'event2', payload);
@@ -45,9 +49,6 @@ describe('utils', () => {
 
   describe('pushHandled', () => {
     it('should push handled events to cache', () => {
-      const state = { handled: {} };
-      const payload = { foo: 'bar' };
-
       pushHandled(state, 'event1', payload);
       pushHandled(state, 'event2', payload);
       pushHandled(state, 'event2', payload);
