@@ -37,11 +37,7 @@ describe('utils', () => {
       const payload = { foo: 'bar' };
 
       pushEmitted(state, 'event1', payload);
-      expect(state.emitted).toEqual({ event1: [payload] });
-
       pushEmitted(state, 'event2', payload);
-      expect(state.emitted).toEqual({ event1: [payload], event2: [payload] });
-
       pushEmitted(state, 'event2', payload);
       expect(state.emitted).toEqual({ event1: [payload], event2: [payload, payload] });
     });
@@ -53,11 +49,7 @@ describe('utils', () => {
       const payload = { foo: 'bar' };
 
       pushHandled(state, 'event1', payload);
-      expect(state.handled).toEqual({ event1: [payload] });
-
       pushHandled(state, 'event2', payload);
-      expect(state.handled).toEqual({ event1: [payload], event2: [payload] });
-
       pushHandled(state, 'event2', payload);
       expect(state.handled).toEqual({ event1: [payload], event2: [payload, payload] });
     });

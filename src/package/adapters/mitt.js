@@ -1,32 +1,20 @@
 import mitt from 'mitt';
 
-import { uuid } from '../utils';
+import base from './base';
 
 export default function({ resolveType }) {
-  const mittInstance = mitt();
+  const instance = mitt();
 
-  return {
-    emit(type, payload = {}) {
-      type = resolveType(type);
-      payload.id = uuid();
-      mittInstance.emit(type, payload);
-    },
+  const adapter = base({ instance, resolveType });
 
-    on(type, handler) {
-      mittInstance.on(resolveType(type), handler);
-    },
+  adapter.once = function(type, handler) {
+    const wrappedHandler = (...args) => {
+      handler(...args);
+      this.off(type, wrappedHandler);
+    };
 
-    off(type, handler) {
-      mittInstance.off(resolveType(type), handler);
-    },
-
-    once(type, handler) {
-      const wrappedHandler = (...args) => {
-        handler(...args);
-        this.off(type, wrappedHandler);
-      };
-
-      this.on(type, wrappedHandler);
-    },
+    this.on(type, wrappedHandler);
   };
+
+  return adapter;
 }
