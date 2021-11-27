@@ -3,21 +3,21 @@ import mitt from 'mitt';
 import { uuid } from '../utils';
 
 export default function({ resolveType }) {
-  const emitter = mitt();
+  const mittInstance = mitt();
 
   return {
     emit(type, payload = {}) {
       type = resolveType(type);
       payload.id = uuid();
-      emitter.emit(type, payload);
+      mittInstance.emit(type, payload);
     },
 
     on(type, handler) {
-      emitter.on(resolveType(type), handler);
+      mittInstance.on(resolveType(type), handler);
     },
 
     off(type, handler) {
-      emitter.off(resolveType(type), handler);
+      mittInstance.off(resolveType(type), handler);
     },
 
     once(type, handler) {
