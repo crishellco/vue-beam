@@ -1,5 +1,5 @@
 name: Node.js CI
-'on':
+"on":
   push:
     branches:
       - master
@@ -21,19 +21,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Read .nvmrc
-        run: 'echo ::set-output name=NVMRC::$(cat .nvmrc)'
+        run: "echo ::set-output name=NVMRC::$(cat .nvmrc)"
         id: nvm
       - name: Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
       - run: yarn install
       - run: yarn test
         env:
           CI: true
       - uses: codecov/codecov-action@v1
       - run: yarn build
-      - run: yarn release
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - run: yarn release
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
