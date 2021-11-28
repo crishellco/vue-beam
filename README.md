@@ -6,11 +6,13 @@
 
 A global event bus for Vue.
 
-- [Install](#install)
-  - [Package](#package)
-  - [Vue Plugin](#vue-plugin)
-  - [Nuxt Module](#nuxt-module)
-- [API `$vm.$beam`](#api-vmbeam)
+- [Getting Started](#getting-started)
+  - [Install Package](#install-package)
+  - [Add The Plugin To Your App](#add-the-plugin-to-your-app)
+  - [Alternatively, Include As a Nuxt Module](#alternatively-include-as-a-nuxt-module)
+- [Usage](#usage)
+  - [In Vue Component](#in-vue-component)
+- [API](#api)
   - [Methods](#methods)
 - [Development](#development)
   - [Build Dist](#build-dist)
@@ -19,9 +21,9 @@ A global event bus for Vue.
   - [Pull Requests](#pull-requests)
 - [License](#license)
 
-## Install
+## Getting Started
 
-### Package
+### Install Package
 
 ```bash
 yarn add @crishellco/vue-beam
@@ -29,20 +31,22 @@ yarn add @crishellco/vue-beam
 npm i @crishellco/vue-beam
 ```
 
-### Vue Plugin
+### Add The Plugin To Your App
 
 ```javascript
 import Vue from 'vue';
 import VueBeam from '@crishellco/vue-beam';
 
-Vue.use(VueBeam);
-// or with options
-Vue.use(VueBeam, { prefix: 'beam' });
+
+const options = {
+  adapter: 'beamitter', // current, this is the default and only supported even adapter
+  prefix: 'beam'
+};
+
+Vue.use(VueBeam, options);
 ```
 
-### Nuxt Module
-
-Installs all components globally.
+### Alternatively, Include As a Nuxt Module
 
 ```javascript
 // nuxt.config.js
@@ -53,9 +57,31 @@ Installs all components globally.
 
 #### Options
 
-| Name     | Description                                                                                 | Default     |
-|----------|---------------------------------------------------------------------------------------------|-------------|
-| `prefix` | The prefix added to all event names (if provided, concatenates with a colon `prefix:event`) | `undefined` |
+| Name     | Type     | Description                                                                                 | Default     |
+|----------|----------|---------------------------------------------------------------------------------------------|-------------|
+| `prefix` | `string` | The prefix added to all event names (if provided, concatenates with a colon `prefix:event`) | `undefined` |
+
+## Usage
+
+### In Vue Component
+```vue
+<template>
+  <button @click="$beam.emit('submitted')">Submit</button>
+</template>
+
+// In a different component...
+<script>
+export default {
+  mounted() {
+    this.$beam.on('submitted', handleSubmit);
+  },
+
+  beforeDestroy() {
+    this.$beam.off('submitted', handleSubmit);
+  }
+};
+</script>
+```
 
 ## API
 
