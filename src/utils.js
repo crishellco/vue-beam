@@ -1,13 +1,5 @@
 import Vue from 'vue';
 
-export const WILDCARD = '*';
-
-export const uuid = () => {
-  return Math.random()
-    .toString(36)
-    .substr(2, 9);
-};
-
 export const get = (obj, path, defaultValue) => {
   const travel = regexp =>
     String.prototype.split
@@ -21,10 +13,6 @@ export const get = (obj, path, defaultValue) => {
   const result = travel(/[,[\]]+?/) || travel(/[,[\].]+?/);
 
   return result === undefined || result === obj ? defaultValue : result;
-};
-
-export const typeResolverFactory = prefix => type => {
-  return type === WILDCARD ? type : prefix ? `${prefix}:${type}` : type;
 };
 
 export const pushEmitted = (state, type, payload) => {

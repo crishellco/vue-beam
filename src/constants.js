@@ -1,2 +1,2 @@
-export const BEAMITTER = 'beamitter';
-export const DEFAULT_OPTIONS = { adapter: BEAMITTER };
+export const DEFAULT_INSTANCE_ID = 'default';
+export const WILDCARD = '*';

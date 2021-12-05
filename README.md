@@ -1,8 +1,8 @@
-# Vue Beam
-
 ![Build](https://github.com/crishellco/vue-beam/workflows/Build/badge.svg)
 [![codecov](https://codecov.io/gh/crishellco/vue-beam/branch/master/graph/badge.svg?token=M7N86U5GF7)](https://codecov.io/gh/crishellco/vue-beam)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b3806bbadbec2ed40c08/maintainability)](https://codeclimate.com/github/crishellco/vue-beam/maintainability)
+
+# Vue Beam
 
 A global event bus for Vue.
 
@@ -12,8 +12,14 @@ A global event bus for Vue.
   - [Alternatively, Include As a Nuxt Module](#alternatively-include-as-a-nuxt-module)
 - [Usage](#usage)
   - [In Vue Component](#in-vue-component)
+  - [Outside Of A Vue Component](#outside-of-a-vue-component)
 - [API](#api)
   - [Methods](#methods)
+    - [$vm.$beam.emit](#vmbeamemit)
+    - [$vm.$beam.debouncedEmit](#vmbeamdebouncedemit)
+    - [$vm.$beam.on](#vmbeamon)
+    - [$vm.$beam.once](#vmbeamonce)
+    - [$vm.$beam.off](#vmbeamoff)
 - [Development](#development)
   - [Build Dist](#build-dist)
   - [Test](#test)
@@ -38,12 +44,7 @@ import Vue from 'vue';
 import VueBeam from '@crishellco/vue-beam';
 
 
-const options = {
-  adapter: 'beamitter', // current, this is the default and only supported even adapter
-  prefix: 'beam'
-};
-
-Vue.use(VueBeam, options);
+Vue.use(VueBeam);
 ```
 
 ### Alternatively, Include As a Nuxt Module
@@ -51,15 +52,9 @@ Vue.use(VueBeam, options);
 ```javascript
 // nuxt.config.js
 {
-  modules: [['@crishellco/vue-beam/nuxt', { prefix: 'beam' }]];
+  modules: ['@crishellco/vue-beam/nuxt'];
 }
 ```
-
-#### Options
-
-| Name     | Type     | Description                                                                                 | Default     |
-|----------|----------|---------------------------------------------------------------------------------------------|-------------|
-| `prefix` | `string` | The prefix added to all event names (if provided, concatenates with a colon `prefix:event`) | `undefined` |
 
 ## Usage
 
@@ -81,6 +76,15 @@ export default {
   }
 };
 </script>
+```
+
+### Outside Of A Vue Component
+```javascript
+import { busFactory } from '@crishellco/vue-beam';
+
+const bus = busFactory();
+
+bus.emit('submitted');
 ```
 
 ## API

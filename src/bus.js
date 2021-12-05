@@ -1,9 +1,14 @@
-import { debounce, pushEmitted, pushHandled } from '../utils';
+import Vue from 'vue';
+import { WILDCARD } from './constants';
+import { debounce, pushEmitted, pushHandled } from './utils';
 
-export default function({ state }) {
+export default function() {
   const allHandlers = new Map();
+  const state = Vue.observable({ emitted: {}, handled: {} });
 
   return {
+    ...state,
+    allHandlers,
     on(type, handler) {
       const handlers = allHandlers.get(type);
 
@@ -17,12 +22,12 @@ export default function({ state }) {
     off(type, handler) {
       const handlers = allHandlers.get(type);
 
-      if (handlers) {
-        if (handler) {
-          handlers.indexOf(handler) > -1 && handlers.splice(handlers.indexOf(handler), 1);
-        } else {
-          allHandlers.set(type, []);
-        }
+      if (!handlers) return;
+
+      if (handler) {
+        handlers.indexOf(handler) > -1 && handlers.splice(handlers.indexOf(handler), 1);
+      } else {
+        allHandlers.set(type, []);
       }
     },
 
@@ -35,18 +40,18 @@ export default function({ state }) {
       this.on(type, listener);
     },
 
-    emit(type, payload) {
+    emit(type, payload = {}) {
       /**
        * TODO Confirm successful receipt
        */
-      const handlers = allHandlers.get(type);
+      const handlers = (allHandlers.get(type) || []).concat(allHandlers.get(WILDCARD) || []);
 
       pushEmitted(state, type, payload);
 
-      if (handlers) {
+      if (handlers.length) {
         handlers.slice().map(handler => {
           pushHandled(state, type, payload);
-          handler(payload);
+          handler(payload, type);
         });
       }
     },

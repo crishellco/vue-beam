@@ -1,4 +1,4 @@
-import { debounce, get, pushEmitted, pushHandled, typeResolverFactory, uuid, WILDCARD } from './utils';
+import { debounce, get, pushEmitted, pushHandled } from './utils';
 
 jest.useFakeTimers();
 
@@ -10,16 +10,6 @@ describe('utils', () => {
     state = { emitted: {}, handled: {} };
   });
 
-  describe('uuid', () => {
-    it('should generate unique ids', () => {
-      const uuids = Array(1000)
-        .fill(',')
-        .map(uuid);
-
-      expect(uuids.length).toBe([...new Set(uuids)].length);
-    });
-  });
-
   describe('get', () => {
     it('should get items in an object', () => {
       const obj = { food: { mx: ['tacos', 'nachos'] } };
@@ -29,14 +19,6 @@ describe('utils', () => {
       expect(get(obj, ['food', 'mx'])).toEqual(obj.food.mx);
       expect(get(obj, 'nothing')).toBeUndefined();
       expect(get(obj, 'nothing', 'default')).toBe('default');
-    });
-  });
-
-  describe('typeResolverFactory', () => {
-    it('should resolve event types', () => {
-      expect(typeResolverFactory()('event')).toBe('event');
-      expect(typeResolverFactory('beam')('event')).toBe('beam:event');
-      expect(typeResolverFactory('beam')(WILDCARD)).toBe(WILDCARD);
     });
   });
 
