@@ -20,22 +20,29 @@ describe('mixin', () => {
   });
 
   it('should add $beam to every components', () => {
-    expect(new Set(Object.keys($beam))).toEqual(
-      new Set(['emit', 'on', 'off', 'once', 'allHandlers', 'debouncedEmit', 'emitted', 'handled'])
-    );
+    expect(Object.getOwnPropertyNames(Object.getPrototypeOf($beam))).toEqual([
+      'constructor',
+      'on',
+      'off',
+      'once',
+      'emit',
+      'debouncedEmit',
+      'removeAllListeners',
+      'listeners',
+    ]);
   });
 
   it('should respect beamInstanceId', () => {
-    const handler = jest.fn();
+    const listener = jest.fn();
     const secondWrapper = getWrapper({ beamInstanceId: 'foo' });
     const $secondBeam = secondWrapper.vm.$beam;
 
-    $beam.on(event, handler);
-    $secondBeam.on(event, handler);
+    $beam.on(event, listener);
+    $secondBeam.on(event, listener);
     $beam.emit(event);
-    expect(handler).toHaveBeenCalledTimes(1);
+    expect(listener).toHaveBeenCalledTimes(1);
 
     $secondBeam.emit(event);
-    expect(handler).toHaveBeenCalledTimes(2);
+    expect(listener).toHaveBeenCalledTimes(2);
   });
 });

@@ -4,7 +4,7 @@
 
 # Vue Beam
 
-A global event bus for Vue.
+An event bus for Vue, Nuxt, or any other JS app.
 
 - [Getting Started](#getting-started)
   - [Install Package](#install-package)
@@ -20,6 +20,8 @@ A global event bus for Vue.
     - [$vm.$beam.on](#vmbeamon)
     - [$vm.$beam.once](#vmbeamonce)
     - [$vm.$beam.off](#vmbeamoff)
+    - [$vm.$beam.removeAllListeners](#vmbeamremovealllisteners)
+    - [$vm.$beam.listeners](#vmbeamlisteners)
 - [Development](#development)
   - [Build Dist](#build-dist)
   - [Test](#test)
@@ -107,19 +109,35 @@ Returns a debounced emit function. Useful when it is undesirable to emit the sam
 
 Subscribes to an event.
 
-`$vm.$beam.on(type: string, handler: function)`
+`$vm.$beam.on(type: string, listener: function)`
+
+Also subscribes to all events
+
+`$vm.$beam.on('*', listener: function)`
 
 #### $vm.$beam.once
 
 Subscribes to an event once.
 
-`$vm.$beam.once(type: string, handler: function)`
+`$vm.$beam.once(type: string, listener: function)`
 
 #### $vm.$beam.off
 
 Unsubscribes to an event.
 
-`$vm.$beam.off(type: string, handler: function)`
+`$vm.$beam.off(type: string, listener: function)`
+
+#### $vm.$beam.removeAllListeners
+
+Removes all listeners on a given bus.
+
+`$vm.$beam.removeAllListeners()`
+
+#### $vm.$beam.listeners
+
+Returns all registered listeners, grouped by event type.
+
+`$vm.$beam.listeners()`
 
 ## Development
 

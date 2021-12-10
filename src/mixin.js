@@ -1,10 +1,10 @@
-import busFactory from './bus-factory';
+import beam from '@crishellco/beam';
 
 export const mixinFactory = () => {
   return {
     computed: {
       $beam() {
-        return busFactory(this.$options.beamInstanceId);
+        return beam(this.$options.beamInstanceId);
       },
     },
   };

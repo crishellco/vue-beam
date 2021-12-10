@@ -2,7 +2,7 @@
   "name": "@crishellco/vue-beam",
   "version": "0.0.0-semantically-released",
   "author": "Chris Mitchell (@crishellco)",
-  "description": "A global event bus for Vue",
+  "description": "An event bus for Vue, Nuxt, or any other JS app.",
   "source": "src/index.js",
   "exports": {
     "require": "./dist/vue-beam.cjs",
@@ -35,7 +35,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@crishellco/beam": "^1.0.1"
+  },
   "peerDependencies": {
     "vue": "^2.6.11"
   },

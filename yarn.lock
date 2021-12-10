@@ -1273,6 +1273,11 @@
   dependencies:
     chalk "^4.0.0"
 
+"@crishellco/beam@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@crishellco/beam/-/beam-1.0.1.tgz#37b8240f6144c7cce20080e149b7a5fa16076ff3"
+  integrity sha512-rO9bkAWsazhc4ZUImEdi3jsYnHWGWHCjq+/Yx/OmSkSUpCva/0crw/E7OqxxoGSi5SQdLVkM/ilZcGBBDDPzkw==
+
 "@endemolshinegroup/cosmiconfig-typescript-loader@^3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@endemolshinegroup/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-3.0.2.tgz#eea4635828dde372838b0909693ebd9aafeec22d"
