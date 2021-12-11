@@ -1,6 +1,6 @@
 module.exports = {
   collectCoverage: true,
-  collectCoverageFrom: ['src/**'],
+  collectCoverageFrom: ['src/**/{!(index**),}.js'],
   coverageReporters: ['json-summary', 'text', 'lcov'],
   preset: '@vue/cli-plugin-unit-jest',
   testMatch: ['**/?(*.)+(spec).[jt]s?(x)'],
