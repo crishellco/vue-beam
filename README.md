@@ -4,7 +4,9 @@
 
 # Vue Beam
 
-An event bus for Vue.
+An event bus for Vue. Built using [@crishellco/beam](https://beam.crishell.co).
+
+
 
 - [Getting Started](#getting-started)
   - [Install Package](#install-package)
@@ -14,15 +16,6 @@ An event bus for Vue.
   - [In Vue Component](#in-vue-component)
   - [Outside Of A Vue Component](#outside-of-a-vue-component)
 - [API](#api)
-  - [Methods](#methods)
-    - [$vm.$beam.emit](#vmbeamemit)
-    - [$vm.$beam.debouncedEmit](#vmbeamdebouncedemit)
-    - [$vm.$beam.on](#vmbeamon)
-    - [$vm.$beam.once](#vmbeamonce)
-    - [$vm.$beam.off](#vmbeamoff)
-    - [$vm.$beam.removeAllListeners](#vmbeamremovealllisteners)
-  - [Properties](#properties)
-    - [$vm.$beam.listeners](#vmbeamlisteners)
 - [Development](#development)
   - [Build Dist](#build-dist)
   - [Test](#test)
@@ -92,71 +85,7 @@ bus.emit('submitted');
 
 ## API
 
-### Methods
-
-#### $vm.$beam.emit
-
-Emits an event.
-
-```vue 
-$vm.$beam.emit(type: string, payload?: {})
-```
-
-#### $vm.$beam.debouncedEmit
-
-Returns a debounced emit function. Useful when it is undesirable to emit the same event many times in a short period of time.
-
-```vue 
-$vm.$beam.debouncedEmit(delay: number, type: string): (payload) => {}
-```
-
-#### $vm.$beam.on
-
-Subscribes to an event.
-
-```vue 
-$vm.$beam.on(type: string, listener: function)
-```
-
-Subscribes to all events.
-
-```vue 
-$vm.$beam.on('*', listener: function)
-```
-
-#### $vm.$beam.once
-
-Subscribes to an event once.
-
-```vue 
-$vm.$beam.once(type: string, listener: function)
-```
-
-#### $vm.$beam.off
-
-Unsubscribes to an event.
-
-```vue 
-$vm.$beam.off(type: string, listener: function)
-```
-
-#### $vm.$beam.removeAllListeners
-
-Removes all listeners on a given bus.
-
-```vue 
-$vm.$beam.removeAllListeners()
-```
-
-### Properties
-
-#### $vm.$beam.listeners
-
-Returns all registered listeners, grouped by event type.
-
-```vue 
-$vm.$beam.listeners
-```
+See the [@crishellco/beam](https://beam.crishell.co/api/methods.html) docs for available methods and properties on `$vm.$beam`.
 
 ## Development
 
