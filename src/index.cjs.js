@@ -2,7 +2,7 @@ import beam from '@crishellco/beam';
 
 import { mixinFactory } from './mixin';
 
-const install = Vue => {
+const install = (Vue) => {
   Vue.mixin(mixinFactory(Vue));
 };
 
