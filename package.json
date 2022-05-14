@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "16.3.0",
-    "@form8ion/commitlint-config": "1.0.31",
+    "@form8ion/commitlint-config": "1.0.32",
     "@vue/cli-plugin-babel": "4.5.17",
     "@vue/cli-plugin-eslint": "4.5.17",
     "@vue/cli-plugin-unit-jest": "4.5.17",
