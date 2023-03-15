@@ -1234,9 +1234,9 @@
     chalk "^4.1.0"
 
 "@crishellco/beam@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@crishellco/beam/-/beam-1.1.0.tgz#dfc13fe89ae937c74bf354d347c4719a6107f2e3"
-  integrity sha512-WEyyO+F6vWQxkivF/FnvfHFb+C6IW+8HDEkR/bT2QlBNMpYw7SIxcjzFM9XfzgBR4XBOyjOiRPHMeqPhXMDo+Q==
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@crishellco/beam/-/beam-1.1.3.tgz#e63a10be8d4be9b1685db86c126d502c386e2e33"
+  integrity sha512-hu7zoBIkFRiwXoTPUfTz0BNxVC5fWYDXjxeM2vvexy4ToTVPJ4bdXXqoRNEJLkUUGXo3L70NES2bneLBNQ9kcQ==
 
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
