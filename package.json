@@ -62,7 +62,7 @@
     "js-beautify": "1.14.11",
     "lint-staged": "14.0.1",
     "microbundle": "0.15.1",
-    "npm-run-all2": "5.0.2",
+    "npm-run-all2": "6.1.1",
     "prettier": "3.2.4",
     "semantic-release": "19.0.5",
     "vue": "2.7.16",
