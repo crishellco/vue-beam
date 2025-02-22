@@ -1,4 +1,4 @@
-![Build](https://github.com/crishellco/vue-beam/workflows/Build/badge.svg)
+![Build](https://github.com/crishellco/vue-beam/actions/workflows/build.yml/badge.svg)
 [![codecov](https://codecov.io/gh/crishellco/vue-beam/branch/master/graph/badge.svg?token=M7N86U5GF7)](https://codecov.io/gh/crishellco/vue-beam)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b3806bbadbec2ed40c08/maintainability)](https://codeclimate.com/github/crishellco/vue-beam/maintainability)
 
