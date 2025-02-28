@@ -63,7 +63,7 @@
     "lint-staged": "14.0.1",
     "microbundle": "0.15.1",
     "npm-run-all2": "6.2.6",
-    "prettier": "3.4.2",
+    "prettier": "3.5.2",
     "semantic-release": "19.0.5",
     "vue": "2.7.16",
     "vue-template-compiler": "2.7.16"
