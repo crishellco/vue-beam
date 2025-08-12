@@ -58,7 +58,7 @@
     "eslint-plugin-jest-formatting": "3.1.0",
     "eslint-plugin-prettier": "5.5.4",
     "eslint-plugin-vue": "9.33.0",
-    "husky": "8.0.3",
+    "husky": "9.1.7",
     "js-beautify": "1.15.4",
     "lint-staged": "14.0.1",
     "microbundle": "0.15.1",
