@@ -2944,7 +2944,7 @@ acorn-globals@^4.1.0, acorn-globals@^4.3.2:
     acorn "^6.0.1"
     acorn-walk "^6.0.1"
 
-acorn-jsx@^5.3.1, acorn-jsx@^5.3.2:
+acorn-jsx@^5.3.1:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
   integrity sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==
@@ -2983,11 +2983,6 @@ acorn@^8.4.1:
   version "8.10.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.10.0.tgz#8be5b3907a67221a81ab23c7889c4c5526b62ec5"
   integrity sha512-F0SAmZ8iUtS//m8DmCTA0jlh6TDKkHQyK6xc6V4KDTyZKA9dnvX9/3sRTVQrWm79glUAZbnmmNcdYwUIHWVybw==
-
-acorn@^8.7.1:
-  version "8.7.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.7.1.tgz#0197122c843d1bf6d0a5e83220a788f278f63c30"
-  integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
 
 address@^1.1.2:
   version "1.1.2"
@@ -5371,7 +5366,7 @@ debug@4, debug@^4.0.0, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.3.1, d
   dependencies:
     ms "2.1.2"
 
-debug@4.3.4, debug@^4.3.3, debug@^4.3.4:
+debug@4.3.4, debug@^4.3.3:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
@@ -6072,18 +6067,16 @@ eslint-plugin-prettier@^5.2.2:
     prettier-linter-helpers "^1.0.0"
     synckit "^0.9.1"
 
-eslint-plugin-vue@9.33.0:
-  version "9.33.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-9.33.0.tgz#de33eba8f78e1d172c59c8ec7fbfd60c6ca35c39"
-  integrity sha512-174lJKuNsuDIlLpjeXc5E2Tss8P44uIimAfGD0b90k0NoirJqpG7stLuU9Vp/9ioTOrQdWVREc4mRd1BD+CvGw==
+eslint-plugin-vue@10.6.0:
+  version "10.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-10.6.0.tgz#c9e6d71320ad58fba6ffcb6c5d005737a9caae9c"
+  integrity sha512-TsoFluWxOpsJlE/l2jJygLQLWBPJ3Qdkesv7tBIunICbTcG0dS1/NBw/Ol4tJw5kHWlAVds4lUmC29/vlPUcEQ==
   dependencies:
     "@eslint-community/eslint-utils" "^4.4.0"
-    globals "^13.24.0"
     natural-compare "^1.4.0"
     nth-check "^2.1.1"
-    postcss-selector-parser "^6.0.15"
+    postcss-selector-parser "^7.1.0"
     semver "^7.6.3"
-    vue-eslint-parser "^9.4.3"
     xml-name-validator "^4.0.0"
 
 eslint-scope@^4.0.3:
@@ -6101,14 +6094,6 @@ eslint-scope@^5.1.1:
   dependencies:
     esrecurse "^4.3.0"
     estraverse "^4.1.1"
-
-eslint-scope@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-7.1.1.tgz#fff34894c2f65e5226d3041ac480b4513a163642"
-  integrity sha512-QKQM/UXpIiHcLqJ5AOyIW7XZmzjkzQXYE54n1++wb0u9V/abW3l9uQnxX8Z5Xd18xyKIMTUAyQ0k1e8pz6LUrw==
-  dependencies:
-    esrecurse "^4.3.0"
-    estraverse "^5.2.0"
 
 eslint-utils@^2.1.0:
   version "2.1.0"
@@ -6198,15 +6183,6 @@ espree@^7.3.0, espree@^7.3.1:
     acorn "^7.4.0"
     acorn-jsx "^5.3.1"
     eslint-visitor-keys "^1.3.0"
-
-espree@^9.3.1:
-  version "9.3.2"
-  resolved "https://registry.yarnpkg.com/espree/-/espree-9.3.2.tgz#f58f77bd334731182801ced3380a8cc859091596"
-  integrity sha512-D211tC7ZwouTIuY5x9XnS0E9sWNChB7IYKX/Xp5eQj3nFXhqmiUDB9q27y76oFl8jTg3pXcQx/bpxMfs3CIZbA==
-  dependencies:
-    acorn "^8.7.1"
-    acorn-jsx "^5.3.2"
-    eslint-visitor-keys "^3.3.0"
 
 esprima@^4.0.0, esprima@^4.0.1, esprima@~4.0.0:
   version "4.0.1"
@@ -7167,13 +7143,6 @@ globals@^11.1.0:
   version "11.12.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
-
-globals@^13.24.0:
-  version "13.24.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-13.24.0.tgz#8432a19d78ce0c1e833949c36adb345400bb1171"
-  integrity sha512-AhO5QUcj8llrbG09iWhPU2B204J1xnPeL8kQmVorSsy+Sjj1sk8gIyh6cUocGmH4L0UuhAJy+hJMRA4mgA4mFQ==
-  dependencies:
-    type-fest "^0.20.2"
 
 globals@^13.6.0, globals@^13.9.0:
   version "13.12.0"
@@ -12063,10 +12032,10 @@ postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.2, postcss-selector
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
 
-postcss-selector-parser@^6.0.15:
-  version "6.0.15"
-  resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-6.0.15.tgz#11cc2b21eebc0b99ea374ffb9887174855a01535"
-  integrity sha512-rEYkQOMUCEMhsKbK66tbEU9QVIxbhN18YiniAwA7XQYTVBqrBy+P2p5JcdqsHgKM2zWylp8d7J6eszocfds5Sw==
+postcss-selector-parser@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-7.1.0.tgz#4d6af97eba65d73bc4d84bcb343e865d7dd16262"
+  integrity sha512-8sLjZwK0R+JlxlYcTuVnyT2v+htpdrjDOKuMcOVdYjt52Lh8hWRYpxBPoKx/Zg+bcjc3wx6fmQevMmUztS/ccA==
   dependencies:
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
@@ -13187,13 +13156,6 @@ semver@^7.1.1, semver@^7.1.2, semver@^7.1.3, semver@^7.2.1, semver@^7.3.2, semve
   version "7.3.5"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.5.tgz#0b621c879348d8998e4b0e4be94b3f12e6018ef7"
   integrity sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==
-  dependencies:
-    lru-cache "^6.0.0"
-
-semver@^7.3.6:
-  version "7.3.7"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.7.tgz#12c5b649afdbf9049707796e22a4028814ce523f"
-  integrity sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==
   dependencies:
     lru-cache "^6.0.0"
 
@@ -14906,19 +14868,6 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
-
-vue-eslint-parser@^9.4.3:
-  version "9.4.3"
-  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-9.4.3.tgz#9b04b22c71401f1e8bca9be7c3e3416a4bde76a8"
-  integrity sha512-2rYRLWlIpaiN8xbPiDyXZXRgLGOtWxERV7ND5fFAv5qo1D2N9Fu9MNajBNc6o13lZ+24DAWCkQCvj4klgmcITg==
-  dependencies:
-    debug "^4.3.4"
-    eslint-scope "^7.1.1"
-    eslint-visitor-keys "^3.3.0"
-    espree "^9.3.1"
-    esquery "^1.4.0"
-    lodash "^4.17.21"
-    semver "^7.3.6"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
